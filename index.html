@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+                    
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Mumo's CV</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      
+        .cv-card h2 {
+            color: #0078D4;
+        }
+        .auto-text {
+            font-size: 22px;
+            color: #555;
+            margin: 20px 0;
+           
+        }
+       
+        iframe {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+        <div class="cv-card">
+            <h2 style="color:    #d71e1e;">Peter Mumo's Curriculum Vitae</h2>
+            
+            <!-- Auto-updating text display -->
+            <div class="auto-text" id="autoText"   style="color: #333;">Welcome to my Curriculum  vitae <br> My name is Peter Mumo.</div>
+
+            <div class="cv-actions">
+        
+                <a href="https://drive.google.com/file/d/1Nxw7vcYjS9BAkCoU9FHW7z21GTg7Np_o/view?usp=sharing" 
+                   class="btn download-btn" target="_blank">Download CV</a>
+                
+              
+                <a href="https://drive.google.com/file/d/1Nxw7vcYjS9BAkCoU9FHW7z21GTg7Np_o/view?usp=sharing" 
+                   class="btn view-btn" target="_blank">View CV</a>
+            </div>
+
+            <iframe src="https://drive.google.com/file/d/1Nxw7vcYjS9BAkCoU9FHW7z21GTg7Np_o/view?usp=sharing" 
+                    width="100%" height="400px" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script>
+      
+        const text = "Welcome to my CV. My name is Peter Mumo. I specialize in web development and API integration. Explore my skills, experience, and journey in the tech world below.";
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById("autoText").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, 50);
+            }
+        }
+
+        
+        window.onload = function() {
+            document.getElementById("autoText").textContent = ""; 
+            typeText();
+        };
+    </script>
+</body>
+</html>
